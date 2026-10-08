@@ -1,5 +1,8 @@
 package dev.piotrprus.canvascreations.presentation.slides
 
+import io.github.alexzhirkevich.qrose.rememberQrCodePainter
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.Image
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -297,6 +300,8 @@ val motionBlurArticleSlide = Slide {
 }
 
 /** The end. */
+private const val END_QR_URL = "https://qr2.me-qr.com/de/link-list/cl62wya5/show"
+
 val theEndSlide = Slide {
     Box(
         modifier = Modifier
@@ -320,6 +325,20 @@ val theEndSlide = Slide {
                 ),
                 fontSize = 96.sp,
                 fontWeight = FontWeight.Bold,
+            )
+        }
+        Box(
+            modifier = Modifier
+                .align(Alignment.BottomStart)
+                .padding(start = 110.dp, bottom = 90.dp)
+                .size(260.dp)
+                .background(Color.White, RoundedCornerShape(18.dp))
+                .padding(22.dp),
+        ) {
+            Image(
+                painter = rememberQrCodePainter(END_QR_URL),
+                contentDescription = "QR code with links from the talk",
+                modifier = Modifier.fillMaxSize(),
             )
         }
         Row(
