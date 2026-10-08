@@ -1,0 +1,10 @@
+.gradle/
+build/
+.idea/
+.kotlin/
+local.properties
+.DS_Store
+
+# Original Keynote HTML export (source material, not used by the deck)
+/index.html
+/assets/
